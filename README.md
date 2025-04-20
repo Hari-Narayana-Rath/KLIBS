@@ -196,9 +196,6 @@ For testing purposes, you can use these accounts:
 
 [MIT](LICENSE)
 
-## Contributors
-
-- Your Name (@yourusername)
 
 ## Acknowledgements
 
