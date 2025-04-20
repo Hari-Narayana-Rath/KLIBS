@@ -1,0 +1,368 @@
+/* Ride Tracking Styles */
+:root {
+  --tracking-pending: #F59E0B;    /* Amber */
+  --tracking-confirmed: #3B82F6;  /* Blue */
+  --tracking-in-progress: #6366F1; /* Indigo */
+  --tracking-completed: #10B981;  /* Green */
+  --tracking-cancelled: #EF4444;  /* Red */
+  --tracking-incomplete: #9CA3AF; /* Gray */
+  --tracking-connector: #E5E7EB;  /* Light Gray */
+  --tracking-active-connector: #3B82F6; /* Blue */
+}
+
+/* Container */
+.ride-tracking-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ride-tracking-container:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.ride-tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ride-tracking-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0;
+}
+
+/* Live Update Indicator */
+.live-update-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #DC2626;
+  animation: pulse 2s infinite;
+}
+
+.live-dot {
+  height: 8px;
+  width: 8px;
+  background-color: #DC2626;
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Timeline */
+.ride-tracking-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 30px 0;
+}
+
+/* Status Steps */
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.status-icon-container {
+  height: 44px;
+  width: 44px;
+  background-color: #F3F4F6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.status-icon {
+  height: 24px;
+  width: 24px;
+  color: var(--tracking-incomplete);
+  transition: all 0.3s ease;
+}
+
+.status-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--tracking-incomplete);
+  text-align: center;
+  max-width: 100px;
+  transition: all 0.3s ease;
+}
+
+/* Status Connector Lines */
+.status-connector {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.connector-line {
+  height: 3px;
+  background-color: var(--tracking-connector);
+  width: 100%;
+  position: absolute;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.connector-line.active {
+  background-color: var(--tracking-active-connector);
+  transform: scaleX(1);
+  transform-origin: left;
+  animation: progressLine 1s ease-out;
+}
+
+@keyframes progressLine {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Status Step States */
+.status-step.completed .status-icon-container {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.status-step.completed .status-icon {
+  color: var(--tracking-completed);
+}
+
+.status-step.completed .status-label {
+  color: var(--tracking-completed);
+}
+
+.status-step.current .status-icon-container {
+  background-color: rgba(59, 130, 246, 0.15);
+  animation: pulseCurrentStep 2s infinite;
+}
+
+.status-step.current .status-icon {
+  color: var(--tracking-confirmed);
+}
+
+.status-step.current .status-label {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+@keyframes pulseCurrentStep {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Last Update Info */
+.last-update-info {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+/* Cancelled Ride */
+.ride-tracking-cancelled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.tracking-cancelled-icon {
+  margin-bottom: 16px;
+  animation: cancelShake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes cancelShake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+.tracking-cancelled-message {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 8px;
+}
+
+.tracking-cancelled-detail {
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+/* Driver Assignment Info */
+.driver-assignment-info {
+  border-top: 1px solid #E5E7EB;
+  margin-top: 16px;
+  padding-top: 16px;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.driver-header {
+  margin-bottom: 12px;
+}
+
+.driver-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0;
+}
+
+.driver-details {
+  padding: 12px;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+}
+
+.driver-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 4px;
+}
+
+.car-info {
+  font-size: 0.875rem;
+  color: #4B5563;
+  margin-bottom: 8px;
+}
+
+.estimated-arrival {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--tracking-confirmed);
+  font-weight: 500;
+}
+
+.small-icon {
+  height: 16px;
+  width: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 640px) {
+  .ride-tracking-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .status-step {
+    flex-direction: row;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  
+  .status-icon-container {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+  
+  .status-label {
+    text-align: left;
+  }
+  
+  .status-connector {
+    left: 22px;
+    top: 44px;
+    height: 24px;
+    width: 3px;
+  }
+  
+  .connector-line {
+    height: 100%;
+    width: 3px;
+  }
+  
+  .connector-line.active {
+    transform: scaleY(1);
+    transform-origin: top;
+    animation: progressLineVertical 1s ease-out;
+  }
+  
+  @keyframes progressLineVertical {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+} 

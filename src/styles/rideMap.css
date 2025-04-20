@@ -1,0 +1,147 @@
+/* Ride Map Styles */
+.ride-map-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.ride-map {
+  height: 350px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Loading state */
+.ride-map-loading {
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+}
+
+.spinner {
+  height: 40px;
+  width: 40px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom markers */
+.custom-marker {
+  background: none !important;
+}
+
+.custom-marker > div {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+.custom-marker svg {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.driver-marker {
+  z-index: 1000;
+}
+
+.driver-marker > div {
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Popup styling */
+.map-popup {
+  padding: 4px;
+}
+
+.map-popup strong {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.map-popup p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #4b5563;
+}
+
+.map-popup .eta {
+  margin-top: 4px;
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+/* Legend */
+.map-legend {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-icon.pickup {
+  background-color: #22C55E;
+}
+
+.legend-icon.destination {
+  background-color: #EF4444;
+}
+
+.legend-icon.driver {
+  background-color: #3B82F6;
+} 

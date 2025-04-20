@@ -1,0 +1,534 @@
+/* Pilot Dashboard Styles */
+:root {
+  --primary-color: #60a5fa;
+  --secondary-color: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --light-gray: #4b5563;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --danger-color: #f87171;
+  --progress-color: #818cf8;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Container */
+.pilot-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #111827;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.pilot-profile {
+  display: flex;
+  align-items: center;
+}
+
+.pilot-info {
+  text-align: right;
+}
+
+.pilot-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.phone-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pilot-phone-input {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-gray);
+  background-color: #2d3748;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.save-phone-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: #1f2937;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-phone-btn:hover {
+  background-color: #3b82f6;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Active Ride Section */
+.active-ride-section {
+  margin-bottom: 1.5rem;
+}
+
+.active-ride-section h2,
+.ride-requests-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.active-ride-card {
+  background-color: #1f2937;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.ride-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ride-locations {
+  flex: 2;
+  min-width: 250px;
+}
+
+.passenger-info {
+  flex: 1;
+  min-width: 200px;
+  background-color: #2d3748;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.passenger-info h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.passenger-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.ride-status {
+  flex: 1;
+  min-width: 150px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: var(--warning-color);
+}
+
+.status-badge.confirmed {
+  background-color: rgba(96, 165, 250, 0.2);
+  color: var(--primary-color);
+}
+
+.status-badge.in-progress {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: var(--progress-color);
+}
+
+.status-badge.completed {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+}
+
+.status-badge.cancelled {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--danger-color);
+}
+
+.location {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.location:last-child {
+  margin-bottom: 0;
+}
+
+.location-marker {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.location-marker.pickup {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.location-marker.destination {
+  background-color: var(--danger-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.location p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Ride Actions */
+.ride-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.call-btn {
+  background-color: var(--primary-color);
+  color: #1f2937;
+}
+
+.call-btn:hover {
+  background-color: #3b82f6;
+}
+
+.map-btn {
+  background-color: #4b5563;
+  color: var(--text-primary);
+}
+
+.map-btn:hover {
+  background-color: #6b7280;
+}
+
+.start-btn {
+  background-color: var(--progress-color);
+  color: #1f2937;
+}
+
+.start-btn:hover {
+  background-color: #6366f1;
+}
+
+.complete-btn {
+  background-color: var(--success-color);
+  color: #1f2937;
+}
+
+.complete-btn:hover {
+  background-color: #10b981;
+}
+
+.accept-btn {
+  background-color: var(--success-color);
+  color: #1f2937;
+}
+
+.accept-btn:hover {
+  background-color: #10b981;
+}
+
+.reject-btn {
+  background-color: var(--danger-color);
+  color: #1f2937;
+}
+
+.reject-btn:hover {
+  background-color: #ef4444;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Ride Requests */
+.requests-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.request-card {
+  background-color: #1f2937;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.request-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #2d3748;
+}
+
+.request-time {
+  font-size: 0.875rem;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.ride-type {
+  font-size: 0.875rem;
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.request-body {
+  padding: 1rem;
+}
+
+.request-locations {
+  margin-bottom: 1rem;
+}
+
+.request-details {
+  background-color: #2d3748;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+}
+
+.request-details p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.request-actions {
+  display: flex;
+  border-top: 1px solid var(--light-gray);
+}
+
+.request-actions button {
+  flex: 1;
+  padding: 0.75rem 0;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Loading and Empty States */
+.loading-container,
+.error-message,
+.no-requests-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #1f2937;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(75, 85, 99, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message p {
+  color: var(--danger-color);
+  margin-bottom: 1rem;
+}
+
+.retry-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-color);
+  color: #1f2937;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.no-requests-message p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+/* Development Tools */
+.dev-tools {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #1f2937;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-gray);
+}
+
+.dev-tools h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.dev-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dev-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #1f2937;
+}
+
+.dev-btn.add-request {
+  background-color: var(--primary-color);
+}
+
+.dev-btn.add-request:hover {
+  background-color: #3b82f6;
+}
+
+.dev-btn.refresh {
+  background-color: var(--progress-color);
+}
+
+.dev-btn.refresh:hover {
+  background-color: #6366f1;
+}
+
+.dev-btn.toggle-active {
+  background-color: var(--warning-color);
+}
+
+.dev-btn.toggle-active:hover {
+  background-color: #f59e0b;
+}
+
+.dev-note {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .pilot-profile {
+    width: 100%;
+  }
+  
+  .phone-input {
+    width: 100%;
+  }
+  
+  .pilot-phone-input {
+    flex: 1;
+  }
+  
+  .requests-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .ride-actions {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    width: 100%;
+  }
+} 

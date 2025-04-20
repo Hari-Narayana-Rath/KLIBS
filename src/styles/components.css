@@ -1,0 +1,538 @@
+/* Common Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --secondary-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    --accent-color: #00d4ff;
+    --text-primary: #ffffff;
+    --text-secondary: #b8c6db;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: var(--primary-gradient);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Header Component */
+.header {
+    background: var(--secondary-gradient);
+    color: var(--text-primary);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    background: linear-gradient(to right, var(--accent-color), #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Button Styles */
+.button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #0093E9 100%);
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+}
+
+/* Booking Form */
+.booking-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+}
+
+.booking-form h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+/* Ride Card */
+.ride-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+}
+
+.ride-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.ride-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(100vh - 60px);
+}
+
+/* Modernized Sidebar Styles */
+.sidebar {
+    background: var(--card-bg);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: linear-gradient(to right, var(--accent-color), #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.sidebar-nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.sidebar-nav-item.active {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--accent-color);
+    border-left: 3px solid var(--accent-color);
+}
+
+.sidebar-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.sidebar-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.sidebar-version {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* Main Content */
+.main-content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 250px;
+        z-index: 100;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar.show {
+        left: 0;
+    }
+
+    .booking-form {
+        padding: 1.5rem;
+    }
+    
+    .header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0093E9;
+}
+
+/* PastRidesPanel Styles */
+.past-rides-panel {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.past-rides-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #f9f9f9;
+}
+
+.past-rides-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.past-rides-body {
+  padding: 16px 0;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.no-rides-message {
+  text-align: center;
+  padding: 48px 24px;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+.past-rides-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.past-ride-card {
+  padding: 16px 24px;
+  border-bottom: 1px solid #eaeaea;
+  transition: background-color 0.2s ease;
+}
+
+.past-ride-card:hover {
+  background-color: #f9f9f9;
+}
+
+.past-ride-card:last-child {
+  border-bottom: none;
+}
+
+.ride-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ride-date {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.ride-status {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #42a942;
+  font-weight: 500;
+}
+
+.status-icon {
+  margin-right: 6px;
+  font-size: 0.85rem;
+}
+
+.status-icon.completed {
+  color: #42a942;
+}
+
+.ride-locations {
+  margin-bottom: 16px;
+}
+
+.pickup, .destination {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.destination {
+  margin-bottom: 0;
+}
+
+.location-icon {
+  margin-right: 12px;
+  margin-top: 3px;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.location-icon.pickup {
+  color: #4a89dc;
+}
+
+.location-icon.destination {
+  color: #e74c3c;
+}
+
+.location-text {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.ride-details {
+  display: flex;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ride-detail {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.detail-icon {
+  margin-right: 8px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.icon.luxury {
+  color: #d4af37;
+}
+
+.icon.premium {
+  color: #9c27b0;
+}
+
+.icon.suv {
+  color: #3f51b5;
+}
+
+.icon.standard {
+  color: #2196f3;
+}
+
+.ride-fare {
+  margin-bottom: 16px;
+}
+
+.fare-amount {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.ride-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.repeat-ride-button {
+  background-color: #4a89dc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.repeat-ride-button:hover {
+  background-color: #3a70c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .past-rides-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .past-ride-card {
+    padding: 12px 16px;
+  }
+  
+  .ride-details {
+    flex-direction: column;
+  }
+  
+  .ride-detail {
+    margin-bottom: 8px;
+  }
+} 

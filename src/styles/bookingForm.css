@@ -1,0 +1,305 @@
+/* BookingForm.css - Enhanced styles for the booking form component */
+
+/* Ride Type Selector Styles */
+.ride-type-selector {
+  --button-bg: rgba(55, 65, 81, 0.8);
+  --button-selected-bg: #04AA6D;
+  --button-hover-bg: rgba(75, 85, 99, 0.9);
+  --button-border: rgba(75, 85, 99, 0.5);
+  --button-selected-border: rgba(4, 170, 109, 0.7);
+  margin-top: 1rem;
+}
+
+/* Explicit 2x2 Grid Layout */
+.ride-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Make sure each item takes full height */
+.ride-type-grid > div {
+  height: 100%;
+}
+
+/* Enhanced button style with better visual hierarchy */
+.ride-type-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.ride-type-btn:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Selected ride type style with subtle pattern */
+.ride-type-btn.selected {
+  background-color: var(--button-selected-bg) !important;
+  border-color: var(--button-selected-border) !important;
+  box-shadow: 0 6px 12px rgba(4, 170, 109, 0.2);
+  transform: translateY(-2px);
+  background-image: 
+    linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.1) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.1) 75%, 
+    transparent 75%, 
+    transparent);
+  background-size: 10px 10px;
+}
+
+/* Ride type icon styles */
+.ride-type-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.ride-type-btn:hover .ride-type-icon,
+.ride-type-btn.selected .ride-type-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Ride type title and description */
+.ride-type-btn h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.ride-type-btn h3::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.ride-type-btn:hover h3::after,
+.ride-type-btn.selected h3::after {
+  width: 100%;
+}
+
+/* Price indicator */
+.ride-type-price {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.ride-type-btn.selected .ride-type-price {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Form Field Styling */
+.form-field {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Book Now Button Styling */
+.book-now-btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  background-color: #04AA6D;
+}
+
+/* Map Modal Styling */
+.map-modal-content {
+  width: 100%;
+  height: 100%;
+}
+
+.location-prompt {
+  background: rgba(17, 24, 39, 0.8);
+  border-left: 3px solid #3b82f6;
+}
+
+/* Date and Time Input Styling */
+input[type="date"], 
+input[type="time"] {
+  color-scheme: dark;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .ride-type-icon {
+    font-size: 2rem;
+  }
+  
+  .ride-type-card {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Main layout adjustments */
+@media (min-width: 1024px) { /* lg breakpoint */
+  .booking-form-container {
+    /* No need for margin adjustment with sticky positioning */
+  }
+}
+
+/* Past Rides Menu Bar Styles */
+.past-rides-sidebar {
+  height: auto;
+  max-height: 80vh;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.past-rides-menu {
+  flex: 1;
+  overflow: hidden;
+}
+
+.past-rides-container {
+  height: auto;
+  max-height: calc(80vh - 4rem); /* 80vh minus header height */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #04AA6D #1f2937;
+}
+
+@media (max-width: 1023px) {
+  .past-rides-sidebar {
+    position: static;
+    width: 100%;
+    max-height: 500px;
+    margin-top: 1.5rem;
+    border-left: none;
+    border-top: 4px solid #4B5563;
+  }
+  
+  .past-rides-container {
+    max-height: 400px;
+  }
+}
+
+.past-rides-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.past-rides-container::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.past-rides-container::-webkit-scrollbar-thumb {
+  background-color: #04AA6D;
+  border-radius: 3px;
+}
+
+.past-rides-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.past-ride-item {
+  transition: background-color 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.past-ride-item:hover {
+  background-color: #374151;
+}
+
+.past-ride-item:last-child {
+  border-bottom: none;
+}
+
+.ride-type-badge-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  text-align: center;
+}
+
+.menu-ride-locations {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-ride-arrow {
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+.repeat-ride-menu-btn {
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.repeat-ride-menu-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Ride Type Badge Styles */
+.ride-type-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.ride-type-badge.standard {
+  background-color: #4B5563;
+  color: #E5E7EB;
+}
+
+.ride-type-badge.premium {
+  background-color: #1E3A8A;
+  color: #BFDBFE;
+}
+
+.ride-type-badge.luxury {
+  background-color: #5B21B6;
+  color: #E9D5FF;
+}
+
+.ride-type-badge.suv {
+  background-color: #065F46;
+  color: #A7F3D0;
+}
+
+.past-ride-card:hover .ride-type-badge {
+  transform: scale(1.05);
+} 

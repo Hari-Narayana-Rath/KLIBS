@@ -1,0 +1,253 @@
+/* App.css */
+
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+/* App Container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1f2937;
+}
+
+/* Header */
+.header {
+    background-color: #1e40af;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Booking Form */
+.booking-form {
+    background-color: #2d3748;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    color: #f3f4f6;
+}
+
+.booking-form input,
+.booking-form button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4b5563;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    background-color: #374151;
+    color: #f3f4f6;
+}
+
+.booking-form input:focus {
+    border-color: #60a5fa;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+.booking-form button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.booking-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.booking-form p {
+    margin-top: 1rem;
+    text-align: center;
+    color: #d1d5db;
+}
+
+/* Error Message */
+.error-message {
+    color: #fca5a5;
+    background-color: rgba(239, 68, 68, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: 1rem;
+    background-color: #111827;
+    color: #9ca3af;
+    text-align: center;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* Quick Login Container */
+.quick-login-container {
+    background-color: #1f2937;
+    padding: 0.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.quick-login-container button {
+    min-width: 150px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background-color: #2563eb;
+    color: white;
+}
+
+.quick-login-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #1d4ed8;
+}
+
+/* Login Type Indicator */
+.login-type-indicator {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #374151;
+    color: #d1d5db;
+}
+
+.login-type-indicator p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #f3f4f6;
+}
+
+/* Header actions section */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Buttons */
+.button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  border: none;
+}
+
+.button-secondary {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border: 1px solid #60a5fa;
+}
+
+.button-secondary:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Password requirements styling */
+.password-requirements {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding: 10px;
+  background-color: #374151;
+  border-radius: 4px;
+  border-left: 3px solid #60a5fa;
+}
+
+.password-requirements p {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.password-requirements ul {
+  list-style-type: none;
+  padding-left: 4px;
+  margin-bottom: 0;
+}
+
+.password-requirements li {
+  margin-bottom: 4px;
+  padding-left: 20px;
+  position: relative;
+  color: #9ca3af;
+}
+
+.password-requirements li:before {
+  content: "✕";
+  color: #ef4444;
+  position: absolute;
+  left: 0;
+}
+
+.password-requirements li.text-green-500:before {
+  content: "✓";
+  color: #10b981;
+}
+
+/* Login form additional styles */
+.text-sm {
+  font-size: 14px;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-gray-600 {
+  color: #d1d5db;
+}
+
+.text-green-500 {
+  color: #34d399;
+}
+
+.pl-4 {
+  padding-left: 16px;
+}
+
+.mt-1 {
+  margin-top: 4px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+/* Code style */
+code.bg-gray-200 {
+  background-color: #4b5563;
+  color: #e5e7eb;
+  padding: 2px 4px;
+  border-radius: 4px;
+}

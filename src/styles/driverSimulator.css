@@ -1,0 +1,122 @@
+/* Driver Simulator Styles */
+.driver-simulator {
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 24px;
+  border: 1px dashed #94a3b8;
+}
+
+.simulator-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.simulator-title::before {
+  content: '🧪';
+  margin-right: 8px;
+}
+
+.simulator-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .simulator-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.driver-location {
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.location-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.location-coords {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #334155;
+  padding: 4px;
+  background-color: #f8fafc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.location-eta {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.simulator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sim-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sim-button.start {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.sim-button.start:hover {
+  background-color: #2563eb;
+}
+
+.sim-button.stop {
+  background-color: #ef4444;
+  color: white;
+}
+
+.sim-button.stop:hover {
+  background-color: #dc2626;
+}
+
+.sim-button.full-ride {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.sim-button.full-ride:hover {
+  background-color: #7c3aed;
+}
+
+.simulator-note {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 12px;
+  font-style: italic;
+  text-align: center;
+} 
