@@ -2,7 +2,6 @@
 
 A full-stack cab booking application with user and pilot interfaces, built with React, Node.js, Express, and MongoDB.
 
-![Cab Booking App](https://github.com/yourusername/cab-booking-app/raw/main/screenshots/app-preview.png)
 
 ## Features
 
@@ -40,7 +39,7 @@ A full-stack cab booking application with user and pilot interfaces, built with 
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/cab-booking-app.git
+git clone https://github.com/Hari-Narayana-Rath/KLIBS
 cd cab-booking-app
 ```
 
